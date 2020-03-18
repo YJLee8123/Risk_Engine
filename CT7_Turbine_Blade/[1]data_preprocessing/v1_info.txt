@@ -1,0 +1,5 @@
+Number of blade group from GE: 3000 
+Number of blades for each group: 34 
+Scale param. for blade replacement cycle: 7540 
+Shape param. for blade replacement cycle: 4.8 
+Total operating time from GE: 20302218h

@@ -1,0 +1,61 @@
+﻿New Table( "Untitled 3",
+	Add Rows( 10 ),
+	New Column( "cyc",
+		Numeric,
+		"Continuous",
+		Format( "Best", 12 ),
+		Set Values( [3486, 8995, 4932, 6792, 5050, 7932, 7999, 7984, 8974, 6612] )
+	)
+) << Run Formulas;
+Distribution(
+	Continuous Distribution(
+		Column( :cyc ),
+		Normal Quantile Plot( 1 ),
+		Fit Normal,
+		Fit Cauchy,
+		Fit Lognormal,
+		Fit Exponential,
+		Fit Gamma,
+		Fit Johnson,
+		Fit SHASH,
+		Fit Normal 2 Mixture,
+		Fit Normal 3 Mixture,
+		Fit Weibull( QQ Plot( 1 ) )
+	),
+	SendToReport(
+		Dispatch( {"cyc"}, "Fitted Normal Distribution", OutlineBox, {Close( 1 )} ),
+		Dispatch( {"cyc"}, "Fitted Cauchy Distribution", OutlineBox, {Close( 1 )} ),
+		Dispatch(
+			{"cyc"},
+			"Fitted Lognormal Distribution",
+			OutlineBox,
+			{Close( 1 )}
+		),
+		Dispatch(
+			{"cyc"},
+			"Fitted Exponential Distribution",
+			OutlineBox,
+			{Close( 1 )}
+		),
+		Dispatch( {"cyc"}, "Fitted Gamma Distribution", OutlineBox, {Close( 1 )} ),
+		Dispatch(
+			{"cyc"},
+			"Fitted Johnson Sb Distribution",
+			OutlineBox,
+			{Close( 1 )}
+		),
+		Dispatch( {"cyc"}, "Fitted SHASH Distribution", OutlineBox, {Close( 1 )} ),
+		Dispatch(
+			{"cyc"},
+			"Fitted Normal 2 Mixture Distribution",
+			OutlineBox,
+			{Close( 1 )}
+		),
+		Dispatch(
+			{"cyc"},
+			"Fitted Normal 3 Mixture Distribution",
+			OutlineBox,
+			{Close( 1 )}
+		)
+	)
+);
